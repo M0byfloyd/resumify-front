@@ -1,17 +1,45 @@
-export const state = () => ({
-  token: null
+const state = () => ({
+  token: null,
+  image: null,
+  id: null,
+  infos: null,
+  displayName: null,
 });
 
-export const getters = {
-  getToken: (state) => state.token
+const getters = {
+  getToken: (state) => state.token,
+  getImage: (state) => state.image,
+  getId: (state)=> state.id,
+  getInfos: (state) => state.infos,
+  getDisplayName: (state) => state.displayName
 };
 
-export const mutations = {
+const mutations = {
   setToken:(state, token) => ( state.token = token ),
-  };
+  setImage:(state, image) => (state.image = image),
+  setId: (state, id) => ( state.id = id ),
+  setInfos: (state, infos) => ( state.infos = infos),
+  setDisplayName: (state, displayName) => ( state.displayName = displayName)
+};
 
-export const actions = {
+const actions = {
   setToken({state, commit}, token) {
     commit('setToken', token)
-  }
+  },
+
+  setInfos({state, commit}, infos) {
+
+    commit('setImage', infos.images[0].url)
+    commit('setId', infos.id )
+    commit('setDisplayName', infos.display_name)
+    commit('setInfos', infos)
+  },
+};
+
+export default {
+  namespaced: true,
+  state,
+  getters,
+  mutations,
+  actions,
 };
