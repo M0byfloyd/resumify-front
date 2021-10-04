@@ -12,7 +12,7 @@ export default {
 
   methods: {
     connectToSpotify(){
-      const scopes = 'user-read-private user-read-email';
+      const scopes = 'user-read-private user-read-email user-top-read';
 
       window.location.href = 'https://accounts.spotify.com/authorize' +
         '?response_type=code' +
