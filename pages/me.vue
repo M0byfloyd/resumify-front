@@ -1,4 +1,4 @@
-<template>
+<template class="me">
   <v-container v-if="token">
     <v-row>
       <v-col>
@@ -11,8 +11,9 @@
         </v-avatar>
       </v-col>
       <v-col>
-        <h1>Bienvenue <span>{{ displayName }}</span></h1>
+        <h1>Bienvenue <span>{{ displayName }}</span> <span v-if="infos.product === 'premium'">⭐</span></h1>
         <a href="">Voir votre profil Spotify</a>
+        <p>{{infos}}</p>
       </v-col>
     </v-row>
   </v-container>

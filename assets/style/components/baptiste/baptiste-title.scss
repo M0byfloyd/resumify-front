@@ -1,0 +1,11 @@
+.baptise-title {
+    &__container {
+        background-color: skyblue;
+        &--bg-hotpink {
+            background-color: hotpink;
+        }
+    }
+    &__title {
+        text-align: center;
+    }
+}
